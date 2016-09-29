@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Jos & Elaine Wedding Party</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="http://localhost:8080/webpack-dev-server.js"></script>
+	<script src="http://embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"   integrity="sha256-oTyWrNiP6Qftu4vs2g0RPCKr3g1a6QTlITNgoebxRc4="   crossorigin="anonymous"></script>
+	<script src="js/flipclock.min.js"></script>
+	<script src="js/modernizr.custom.js"></script>
+	<script src="js/jquery.slicebox.min.js"></script>
+	<script src="js/jquery.windy.js"></script>
+	<script src="js/jquery.gridrotator.js"></script>
+
+	<link rel="stylesheet" href="css/flipclock.css">
+	<link rel="stylesheet" href="css/slicebox.css">
+	<link rel="stylesheet" href="css/windy.css">
+	<link rel="stylesheet" href="css/AnimatedResponsiveImageGrid.css">
+	<!-- Latest compiled and minified CSS -->
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+		crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+
+	<link type='text/css' rel='stylesheet' href='css/style.css' />
+	<script>
+		$(function(){
+			var date = new Date(2016, 11, 17, 12, 00, 0);
+    		var now = new Date();
+		    var diff = (date.getTime()/1000) - (now.getTime()/1000);
+			
+			$('.clock').FlipClock(diff, {
+				clockFace: 'DailyCounter',
+				countdown: true
+			});
+
+			var Page = (function() {
+					var $navArrows = $( '#nav-arrows' ).hide(),
+						$shadow = $( '#shadow' ).hide(),
+						slicebox = $( '#sb-slider' ).slicebox( {
+							onReady : function() {
+
+								$navArrows.show();
+								$shadow.show();
+
+							},
+							orientation : 'r',
+							cuboidsRandom : true,
+							disperseFactor : 30
+						}),	
+						init = function() {
+							setInterval(function(){
+								slicebox.next();
+							}, 3000);
+						};
+					return { init : init };
+				})();
+			Page.init();
+
+			$( '#ri-grid' ).gridrotator({
+					rows : 4,
+					columns : 4,
+					maxStep : 2,
+					interval : 2000,
+					step : 'random',
+					animType: 'slideLeft',
+					imageWidth: 300,
+					imageHeigth: 200,
+					//nochange : [0,1,2,3],
+					preventClick : true,
+					w1024 : {
+						rows : 4,
+						columns : 4
+					},
+					w768 : {
+						rows : 5,
+						columns : 4
+					},
+					w480 : {
+						rows : 7,
+						columns : 3
+					},
+					w320 : {
+						rows : 10,
+						columns : 2
+					},
+					w240 : {
+						rows : 30,
+						columns : 1
+					}
+			});
+
+			
+			var $el = $( '#wi-el' ),
+				windy = $el.windy( {
+					// rotation and translation boundaries for the items transitions
+					boundaries : {
+						rotateX : { min : 40 , max : 90 },
+						rotateY : { min : -15 , max : 15 },
+						rotateZ : { min : -5 , max : 5 },
+						translateX : { min : -200 , max : 200 },
+						translateY : { min : -300 , max : -200 },
+						translateZ : { min : 50 , max : 100 }
+					}
+				});
+
+			var index = 0, max = windy.getItemsCount() - 1;
+			setInterval(function(){
+				windy.navigate(index);
+				index++;
+				if (index > max ) {
+					index = 0;
+				}
+			},1000);
+		})
+	</script>
+</head>
+
+<body>
+	<img class="img-responsive background" src="https://c3.staticflickr.com/6/5606/29284870554_4b4600a0d5_k.jpg">
+	<div class="content">
+		<div class="title">
+			<div class="text">
+				<h1>SHE SAID YES</h1>
+				<h6>Dec 17, 2016 at 徐州路2號庭園會館</h6>
+			</div>
+		</div>
+		<div class="story">
+			<h1>相遇, 相知, 相戀, 相惜</h1>
+			<h3>與你相遇，彼此相知；</h3>
+			<h3>攜手相戀，偕老相惜。</h3>
+		</div>
+		<div class="info">
+			<div id="ri-grid" class="ri-grid ri-grid-size-1 ri-shadow">
+				<ul>
+					<li><a href="#"><img src="https://c1.staticflickr.com/9/8115/29358131944_858acc49bb_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c7.staticflickr.com/9/8560/29358140854_79f194ff6e_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c1.staticflickr.com/6/5724/29951653536_1c3bc93734_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c1.staticflickr.com/9/8268/29951659256_d29efa8f7c_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c4.staticflickr.com/9/8235/29902379931_d53aa88155_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c6.staticflickr.com/9/8068/29902425221_2ff18a8df2_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c2.staticflickr.com/9/8230/29902439521_f7e62ba5f7_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c8.staticflickr.com/8/7513/29902431871_4129958515_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c1.staticflickr.com/9/8124/29951742496_66f6b24f91_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c5.staticflickr.com/9/8074/29358249284_103ea8e67a_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c1.staticflickr.com/6/5327/29692117600_fe1d340f45_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c4.staticflickr.com/6/5795/29902482691_e1ed6fc03f_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c6.staticflickr.com/6/5245/29902516661_1ecf85fb12_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c1.staticflickr.com/9/8274/29358311024_c066609e2f_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c7.staticflickr.com/9/8730/29951802206_3a2cb5430c_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c1.staticflickr.com/9/8527/29951806456_cfb35fae87_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c2.staticflickr.com/6/5679/29359365793_708ab2d37b_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c6.staticflickr.com/9/8349/29359368653_2fa6e1b407_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c7.staticflickr.com/9/8265/29872299742_ea23f5d5c4_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c2.staticflickr.com/8/7784/29359360193_598775d90c_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c7.staticflickr.com/6/5475/29358326174_9ef3d81b76_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c5.staticflickr.com/9/8762/29951848756_d8ef6da64f_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c7.staticflickr.com/6/5150/29358370934_4d31723bf7_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c2.staticflickr.com/9/8364/29902672201_fe4e1219a6_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c4.staticflickr.com/6/5769/29986134635_df634d5ebf_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c7.staticflickr.com/9/8095/29951973966_f8e64219e1_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c1.staticflickr.com/9/8222/29358486784_2017b0e31a_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c8.staticflickr.com/9/8331/29902813431_f6590337a2_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c3.staticflickr.com/9/8718/29692358970_8db2438c82_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c7.staticflickr.com/6/5612/29692377710_bf29ae70f2_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c2.staticflickr.com/9/8351/29986066385_6ac1c89725_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c8.staticflickr.com/6/5728/29986218855_2408bf9852_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c2.staticflickr.com/6/5173/29359816673_64c97967b1_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c8.staticflickr.com/9/8424/29986474815_dedd697734_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c1.staticflickr.com/6/5526/29952297056_8895a6167c_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c8.staticflickr.com/9/8263/29903066671_1e0469abf9_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c6.staticflickr.com/8/7536/29359817733_cab3825c62_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c1.staticflickr.com/6/5033/29358790424_f11a4432b6_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c8.staticflickr.com/6/5532/29903067591_60ce316b8b_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c7.staticflickr.com/9/8534/29692612910_5870b20903_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c2.staticflickr.com/9/8412/29903068041_3e6d80aa58_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c8.staticflickr.com/9/8367/29903069231_e2d676e118_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c6.staticflickr.com/9/8373/29903069621_0810e103bb_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c6.staticflickr.com/6/5246/29903070501_0d81a33d88_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c6.staticflickr.com/6/5349/29359808053_131e82e294_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c6.staticflickr.com/8/7468/29903070621_d6118d4fc7_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c2.staticflickr.com/9/8534/29903071481_d4b7313a0a_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c1.staticflickr.com/9/8236/29692617240_248b6db25e_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c5.staticflickr.com/9/8798/29952273636_e4fd6d924d_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c3.staticflickr.com/6/5686/29872762882_c76f37c726_n.jpg"></a></li>
+					<li><a href="#"><img src="https://c6.staticflickr.com/8/7502/29359807293_d86983f65f_n.jpg"></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="story">
+			<h1>相處雖長，回憶苦短</h1>
+			<h3>但若能記錄妳那瞬間的燦爛，就能永恆。</h3>
+		</div>
+		<div class="info">
+			<ul id="wi-el" class="wi-container">
+				<li><a href="#"><img src="https://c6.staticflickr.com/6/5271/29903452701_4605e25829_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c8.staticflickr.com/9/8707/29903452191_085bb2a81b_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c6.staticflickr.com/9/8492/29329419933_4eaee55051_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c1.staticflickr.com/9/8541/29328517984_d25448efae_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c4.staticflickr.com/9/8266/29329420443_ae5fb043ac_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c8.staticflickr.com/9/8367/29329420983_a4cd370420_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c5.staticflickr.com/9/8329/29328518684_d77a792471_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c8.staticflickr.com/9/8227/29329420703_0e407005dd_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c4.staticflickr.com/9/8471/29872621491_a4fbfd03e5_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c5.staticflickr.com/9/8716/29328521644_65ee85683e_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c4.staticflickr.com/9/8355/29872620531_de11f0c151_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c7.staticflickr.com/9/8237/29328520774_0900db915c_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c2.staticflickr.com/9/8337/29329422513_9aa697aee0_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c1.staticflickr.com/9/8080/29328520344_949077d92a_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c1.staticflickr.com/6/5145/29328519784_1663e99ce5_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c5.staticflickr.com/9/8617/29328519964_2269031bf7_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c2.staticflickr.com/6/5062/29329421993_d939162c5d_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c3.staticflickr.com/9/8096/29328519194_a5f01dfe9a_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c4.staticflickr.com/6/5181/29329421643_323a70b5be_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c6.staticflickr.com/9/8362/29329421413_64cb9d03a6_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c2.staticflickr.com/9/8463/29329421153_4ba112dfdb_b.jpg"></a></li>
+				<li><a href="#"><img src="https://c7.staticflickr.com/9/8149/29328519454_f380b31651_b.jpg"></a></li>
+			</ul>
+		</div>
+		<div class="story">
+			<h1>在這特別的日子</h1>
+			<h3>我們誠摯的邀請您，參予我們的重要時刻</h3>
+		</div>
+		<div class="info">
+			<ul id="sb-slider" class="sb-slider">
+				<li><img src="https://c4.staticflickr.com/9/8518/29285749323_1273d59e43_b.jpg"></li>
+				<li><img src="https://c8.staticflickr.com/9/8005/29912158175_37cf8a04e3_b.jpg"></li>
+				<li><img src="https://c3.staticflickr.com/6/5732/29284865754_b5c6b6aa76_b.jpg"></li>
+				<li><img src="https://c5.staticflickr.com/9/8343/29284867724_a09dedf514_b.jpg"></li>
+				<li><img src="https://c3.staticflickr.com/9/8431/29284863354_bb8eac45a5_b.jpg"></li>
+				<li><img src="https://c4.staticflickr.com/9/8455/29912172555_d9b5265e46_b.jpg"></li>
+				<li><img src="https://c3.staticflickr.com/9/8732/29284869074_05a695054b_b.jpg"></li>
+				<li><img src="https://c3.staticflickr.com/9/8419/29328210794_8bcf0d142f_b.jpg"></li>
+				<li><img src="https://c1.staticflickr.com/9/8515/29661572000_e95ae891e2_b.jpg"></li>
+				<li><img src="https://c6.staticflickr.com/6/5524/29955271925_6edd289607_b.jpg"></li>
+				<li><img src="https://c1.staticflickr.com/6/5347/29328212224_a8de9d7974_b.jpg"></li>
+				<li><img src="https://c3.staticflickr.com/9/8467/29921459866_094b96c05f_b.jpg"></li>
+			</ul>
+			<div id="shadow" class="shadow"></div>
+		</div>
+		<div class="time">
+			<h1>When</h1>
+			<h2>2016/12/17 12:00:00</h2>
+			<div class="clock"></div>
+		</div>
+		<div class="map">
+			<h1>Where</h1>
+			<h2>台北市中正區徐州路2號</h2>
+			<div class="information">
+				<div>
+					<img src="img/location.jpg" />
+				</div>
+				<div>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7903864627942!2d121.51893061554397!3d25.04118668396884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a976b82a6343%3A0xebdefa61d17726a4!2z5b6Q5bee6LevMuiZn-W6reWckuacg-mkqA!5e0!3m2!1szh-TW!2stw!4v1474812972764"
+					frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
