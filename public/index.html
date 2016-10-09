@@ -29,6 +29,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
 		crossorigin="anonymous">
 
+	<!-- Raleway font -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 		crossorigin="anonymous"></script>
@@ -71,7 +73,7 @@
 			$( '#ri-grid' ).gridrotator({
 					rows : 4,
 					columns : 4,
-					maxStep : 2,
+					maxStep : 5,
 					interval : 2000,
 					step : 'random',
 					animType: 'slideLeft',
@@ -101,39 +103,30 @@
 					}
 			});
 
-			
-			var $el = $( '#wi-el' ),
-				windy = $el.windy( {
-					// rotation and translation boundaries for the items transitions
-					boundaries : {
-						rotateX : { min : 40 , max : 90 },
-						rotateY : { min : -15 , max : 15 },
-						rotateZ : { min : -5 , max : 5 },
-						translateX : { min : -200 , max : 200 },
-						translateY : { min : -300 , max : -200 },
-						translateZ : { min : 50 , max : 100 }
-					}
-				});
-
-			var index = 0, max = windy.getItemsCount() - 1;
-			setInterval(function(){
-				windy.navigate(index);
-				index++;
-				if (index > max ) {
-					index = 0;
+			$(document).scroll(function(e) {
+				console.log($(document).scrollTop(), $(window).height(), $(document).scrollTop() >  $(window).height());
+				if($(document).scrollTop() >  $(window).height()){
+					$("#background_01").hide();
+					$("#background_02").show();
+				} else {
+					$("#background_01").show();
+					$("#background_02").hide();
 				}
-			},1000);
+			});
 		})
 	</script>
 </head>
 
 <body>
-	<img class="img-responsive background" src="https://c3.staticflickr.com/6/5606/29284870554_4b4600a0d5_k.jpg">
+	<div class="background">
+		<img id="background_01" class="img-responsive" src="https://c3.staticflickr.com/6/5606/29284870554_4b4600a0d5_k.jpg">
+		<img id="background_02" class="img-responsive" src="https://c6.staticflickr.com/6/5281/30118837181_1d163bfc2e_k.jpg">
+	</div>
 	<div class="content">
 		<div class="title">
 			<div class="text">
 				<h1>SHE SAID YES</h1>
-				<h6>Dec 17, 2016 at 徐州路2號庭園會館</h6>
+				<h6>- Wedding Celebration -</h6>
 			</div>
 		</div>
 		<div class="story">
@@ -199,36 +192,6 @@
 			</div>
 		</div>
 		<div class="story">
-			<h1>相處雖長，回憶苦短</h1>
-			<h3>但若能記錄妳那瞬間的燦爛，就能永恆。</h3>
-		</div>
-		<div class="info">
-			<ul id="wi-el" class="wi-container">
-				<li><a href="#"><img src="https://c6.staticflickr.com/6/5271/29903452701_4605e25829_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c8.staticflickr.com/9/8707/29903452191_085bb2a81b_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c6.staticflickr.com/9/8492/29329419933_4eaee55051_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c1.staticflickr.com/9/8541/29328517984_d25448efae_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c4.staticflickr.com/9/8266/29329420443_ae5fb043ac_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c8.staticflickr.com/9/8367/29329420983_a4cd370420_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c5.staticflickr.com/9/8329/29328518684_d77a792471_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c8.staticflickr.com/9/8227/29329420703_0e407005dd_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c4.staticflickr.com/9/8471/29872621491_a4fbfd03e5_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c5.staticflickr.com/9/8716/29328521644_65ee85683e_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c4.staticflickr.com/9/8355/29872620531_de11f0c151_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c7.staticflickr.com/9/8237/29328520774_0900db915c_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c2.staticflickr.com/9/8337/29329422513_9aa697aee0_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c1.staticflickr.com/9/8080/29328520344_949077d92a_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c1.staticflickr.com/6/5145/29328519784_1663e99ce5_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c5.staticflickr.com/9/8617/29328519964_2269031bf7_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c2.staticflickr.com/6/5062/29329421993_d939162c5d_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c3.staticflickr.com/9/8096/29328519194_a5f01dfe9a_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c4.staticflickr.com/6/5181/29329421643_323a70b5be_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c6.staticflickr.com/9/8362/29329421413_64cb9d03a6_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c2.staticflickr.com/9/8463/29329421153_4ba112dfdb_b.jpg"></a></li>
-				<li><a href="#"><img src="https://c7.staticflickr.com/9/8149/29328519454_f380b31651_b.jpg"></a></li>
-			</ul>
-		</div>
-		<div class="story">
 			<h1>在這特別的日子</h1>
 			<h3>我們誠摯的邀請您，參予我們的重要時刻</h3>
 		</div>
@@ -249,14 +212,19 @@
 			</ul>
 			<div id="shadow" class="shadow"></div>
 		</div>
-		<div class="time">
-			<h1>When</h1>
-			<h2>2016/12/17 12:00:00</h2>
-			<div class="clock"></div>
+		<div class="event">
+			<div class="text">
+				<h1>When</h1>
+				<h6>Saturday, Dec 17, 2016</h6>
+				<h6>12:00 pm</h6>
+			</div>
+			<div class="text">
+				<h1>Where</h1>
+				<h6>台北市中正區徐州路2號</h6>
+				<h6>捷運台大醫院站(2號出口)</h6>
+			</div>
 		</div>
 		<div class="map">
-			<h1>Where</h1>
-			<h2>台北市中正區徐州路2號</h2>
 			<div class="information">
 				<div>
 					<img src="img/location.jpg" />
@@ -266,6 +234,9 @@
 					frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
+		</div>
+		<div class="time">
+			<div class="clock"></div>
 		</div>
 	</div>
 </body>

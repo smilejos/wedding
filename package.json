@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "webpack-dev-server --devtool eval --inline --progress --colors --hot --content-base public"
+    "dev": "webpack-dev-server --devtool eval --inline --progress --colors --hot --content-base public",
+    "start": "firebase serve"
   },
   "author": "Jos Tung",
   "license": "ISC",
