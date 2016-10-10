@@ -37,6 +37,9 @@
 
 	<link type='text/css' rel='stylesheet' href='css/style.css' />
 	<script>
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    		window.location = "index_m.html";
+		}
 		$(function(){
 			var date = new Date(2016, 11, 17, 12, 00, 0);
     		var now = new Date();
