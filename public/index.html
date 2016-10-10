@@ -104,12 +104,14 @@
 			});
 
 			$(document).scroll(function(e) {
-				console.log($(document).scrollTop(), $(window).height(), $(document).scrollTop() >  $(window).height());
+				//console.log($(document).scrollTop(), $(window).height(), $(document).scrollTop() >  $(window).height());
 				if($(document).scrollTop() >  $(window).height()){
 					$("#background_01").hide();
 					$("#background_02").show();
+					$("#background_02").css("margin-top", $(document).scrollTop() / 5 * -1 + 400);
 				} else {
 					$("#background_01").show();
+					$("#background_01").css("margin-top", $(document).scrollTop() / 5 * -1);
 					$("#background_02").hide();
 				}
 			});
@@ -127,6 +129,7 @@
 			<div class="text">
 				<h1>SHE SAID YES</h1>
 				<h6>- Wedding Celebration -</h6>
+				<div class="clock"></div>
 			</div>
 		</div>
 		<div class="story">
@@ -143,7 +146,6 @@
 					<li><a href="#"><img src="https://c1.staticflickr.com/9/8268/29951659256_d29efa8f7c_n.jpg"></a></li>
 					<li><a href="#"><img src="https://c4.staticflickr.com/9/8235/29902379931_d53aa88155_n.jpg"></a></li>
 					<li><a href="#"><img src="https://c6.staticflickr.com/9/8068/29902425221_2ff18a8df2_n.jpg"></a></li>
-					<li><a href="#"><img src="https://c2.staticflickr.com/9/8230/29902439521_f7e62ba5f7_n.jpg"></a></li>
 					<li><a href="#"><img src="https://c8.staticflickr.com/8/7513/29902431871_4129958515_n.jpg"></a></li>
 					<li><a href="#"><img src="https://c1.staticflickr.com/9/8124/29951742496_66f6b24f91_n.jpg"></a></li>
 					<li><a href="#"><img src="https://c5.staticflickr.com/9/8074/29358249284_103ea8e67a_n.jpg"></a></li>
@@ -191,27 +193,6 @@
 				</ul>
 			</div>
 		</div>
-		<div class="story">
-			<h1>在這特別的日子</h1>
-			<h3>我們誠摯的邀請您，參予我們的重要時刻</h3>
-		</div>
-		<div class="info">
-			<ul id="sb-slider" class="sb-slider">
-				<li><img src="https://c4.staticflickr.com/9/8518/29285749323_1273d59e43_b.jpg"></li>
-				<li><img src="https://c8.staticflickr.com/9/8005/29912158175_37cf8a04e3_b.jpg"></li>
-				<li><img src="https://c3.staticflickr.com/6/5732/29284865754_b5c6b6aa76_b.jpg"></li>
-				<li><img src="https://c5.staticflickr.com/9/8343/29284867724_a09dedf514_b.jpg"></li>
-				<li><img src="https://c3.staticflickr.com/9/8431/29284863354_bb8eac45a5_b.jpg"></li>
-				<li><img src="https://c4.staticflickr.com/9/8455/29912172555_d9b5265e46_b.jpg"></li>
-				<li><img src="https://c3.staticflickr.com/9/8732/29284869074_05a695054b_b.jpg"></li>
-				<li><img src="https://c3.staticflickr.com/9/8419/29328210794_8bcf0d142f_b.jpg"></li>
-				<li><img src="https://c1.staticflickr.com/9/8515/29661572000_e95ae891e2_b.jpg"></li>
-				<li><img src="https://c6.staticflickr.com/6/5524/29955271925_6edd289607_b.jpg"></li>
-				<li><img src="https://c1.staticflickr.com/6/5347/29328212224_a8de9d7974_b.jpg"></li>
-				<li><img src="https://c3.staticflickr.com/9/8467/29921459866_094b96c05f_b.jpg"></li>
-			</ul>
-			<div id="shadow" class="shadow"></div>
-		</div>
 		<div class="event">
 			<div class="text">
 				<h1>When</h1>
@@ -224,19 +205,31 @@
 				<h6>捷運台大醫院站(2號出口)</h6>
 			</div>
 		</div>
+		<div class="story">
+			<h1>在這特別的日子</h1>
+			<h3>我們誠摯的邀請您，參與我們的重要時刻</h3>
+		</div>
+		<div class="info">
+			<ul id="sb-slider" class="sb-slider">
+				<li><img src="https://c4.staticflickr.com/9/8455/29912172555_345675ea33_k.jpg"></li>
+				<li><img src="https://c3.staticflickr.com/9/8732/29284869074_9483ffeb94_k.jpg"></li>
+				<li><img src="https://c3.staticflickr.com/6/5732/29284865754_9fbc32ef1a_k.jpg"></li>
+				<li><img src="https://c8.staticflickr.com/9/8005/29912158175_cd94c1301a_k.jpg"></li>
+				<li><img src="https://c3.staticflickr.com/9/8431/29284863354_1a1f7921e1_k.jpg"></li>
+				<li><img src="https://c4.staticflickr.com/9/8518/29285749323_8bf9e08613_k.jpg"></li>
+				<li><img src="https://c1.staticflickr.com/9/8515/29661572000_7f28ab025f_k.jpg"></li>
+				<li><img src="https://c7.staticflickr.com/6/5655/29579930134_ca1d2fb2a4_k.jpg"></li>
+				<li><img src="https://c6.staticflickr.com/6/5524/29955271925_73419cbfa2_k.jpg"></li>
+				<li><img src="https://c8.staticflickr.com/9/8569/29579862583_3838bedf3d_k.jpg"></li>
+			</ul>
+			<div id="shadow" class="shadow"></div>
+		</div>	
 		<div class="map">
 			<div class="information">
-				<div>
-					<img src="img/location.jpg" />
-				</div>
-				<div>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7903864627942!2d121.51893061554397!3d25.04118668396884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a976b82a6343%3A0xebdefa61d17726a4!2z5b6Q5bee6LevMuiZn-W6reWckuacg-mkqA!5e0!3m2!1szh-TW!2stw!4v1474812972764"
-					frameborder="0" allowfullscreen></iframe>
-				</div>
+				<a href="https://goo.gl/maps/hWk6K" target="_blank">
+					<img src="img/map.png" />
+				</a>
 			</div>
-		</div>
-		<div class="time">
-			<div class="clock"></div>
 		</div>
 	</div>
 </body>
