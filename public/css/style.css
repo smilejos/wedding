@@ -32,7 +32,7 @@ body {
 }
 
 .content>.event {
-    height: 60%;
+    height: 600px;
 }
 
 .content>.title>.text {
@@ -84,10 +84,10 @@ body {
 }
 .content>.info {
     position: relative;
-    padding: 10px 0px;
+    padding: 30px 0px;
     left: 0;
     right: 0;
-    height: 100%;
+    height: auto;
     background: transparent url(../img/bg.jpg) repeat bottom center;
     background: #fff;
 }
@@ -140,7 +140,20 @@ body {
 
 .content .map .information {
     position: relative;
-    width: 600px;
-    left: 50%;
-    margin-left: -300px;
+    width: auto;
+    text-align: center;
+}
+
+.content .map .information button.join {
+    text-align: center;
+    font-size: 24px;
+    line-height: 36px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: rgb(230, 205, 191);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", Meiryo, "Microsoft JhengHei";
+    color: #431700;
+    position: relative;
+    bottom: 10px;
+    font-weight: bold;
 }

@@ -68,6 +68,7 @@
 						};
 					return { init : init };
 				})();
+
 			Page.init();
 
 			$( '#ri-grid' ).gridrotator({
@@ -115,6 +116,10 @@
 					$("#background_02").hide();
 				}
 			});
+
+			$("button").on("click", function(){
+				window.open("https://docs.google.com/forms/d/e/1FAIpQLSdidiYBdrtj_iznfo5ijUqngRdp8aaQR4IsKQMFd9baFTH68A/viewform?c=0&w=1", "_blank");
+			})
 		})
 	</script>
 </head>
@@ -211,25 +216,30 @@
 		</div>
 		<div class="info">
 			<ul id="sb-slider" class="sb-slider">
-				<li><img src="https://c4.staticflickr.com/9/8455/29912172555_345675ea33_k.jpg"></li>
-				<li><img src="https://c3.staticflickr.com/9/8732/29284869074_9483ffeb94_k.jpg"></li>
-				<li><img src="https://c3.staticflickr.com/6/5732/29284865754_9fbc32ef1a_k.jpg"></li>
-				<li><img src="https://c8.staticflickr.com/9/8005/29912158175_cd94c1301a_k.jpg"></li>
-				<li><img src="https://c3.staticflickr.com/9/8431/29284863354_1a1f7921e1_k.jpg"></li>
-				<li><img src="https://c4.staticflickr.com/9/8518/29285749323_8bf9e08613_k.jpg"></li>
-				<li><img src="https://c1.staticflickr.com/9/8515/29661572000_7f28ab025f_k.jpg"></li>
-				<li><img src="https://c7.staticflickr.com/6/5655/29579930134_ca1d2fb2a4_k.jpg"></li>
-				<li><img src="https://c6.staticflickr.com/6/5524/29955271925_73419cbfa2_k.jpg"></li>
-				<li><img src="https://c8.staticflickr.com/9/8569/29579862583_3838bedf3d_k.jpg"></li>
+				<li><img src="https://c4.staticflickr.com/9/8455/29912172555_d9b5265e46_b.jpg"></li>
+				<li><img src="https://c3.staticflickr.com/9/8732/29284869074_05a695054b_b.jpg"></li>
+				<li><img src="https://c3.staticflickr.com/6/5732/29284865754_b5c6b6aa76_b.jpg"></li>
+				<li><img src="https://c8.staticflickr.com/9/8005/29912158175_37cf8a04e3_b.jpg"></li>
+				<li><img src="https://c3.staticflickr.com/9/8431/29284863354_bb8eac45a5_b.jpg"></li>
+				<li><img src="https://c6.staticflickr.com/6/5524/29955271925_6edd289607_b.jpg"></li>
+				<li><img src="https://c1.staticflickr.com/9/8515/29661572000_e95ae891e2_b.jpg"></li>
+				<li><img src="https://c8.staticflickr.com/9/8569/29579862583_3cbe308ba8_b.jpg"></li>
+				<li><img src="https://c7.staticflickr.com/6/5655/29579930134_8b691ca443_b.jpg"></li>
+				<li><img src="https://c4.staticflickr.com/9/8518/29285749323_1273d59e43_b.jpg"></li>
 			</ul>
 			<div id="shadow" class="shadow"></div>
-		</div>	
+		</div>
 		<div class="map">
-			<div class="information">
+			<span class="information">
 				<a href="https://goo.gl/maps/hWk6K" target="_blank">
 					<img src="img/map.png" />
 				</a>
-			</div>
+			</span>
+			<span class="information">
+				<button class="join">
+					立刻報名<br>獻上最深的祝福
+				</button>
+			</span>
 		</div>
 	</div>
 </body>
